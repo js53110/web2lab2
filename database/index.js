@@ -4,10 +4,11 @@ const { Pool } = pkg;
 
 const pool = new Pool({
   user: "web2lab2",
-  host: "dpg-cl51ess72pts739pbrbg-a",
+  host: "dpg-cl51ess72pts739pbrbg-a.oregon-postgres.render.com",
   database: "web2lab2_m4n1",
   password: "DOZu47OQr8GMDaJDGNNULANL9ZRD4m6V",
   port: 5432,
+  ssl: true,
 });
 
 export default {
