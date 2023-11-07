@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web2Lab2</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+
+<% let text = ""; %>
+<% if(isLoggedIn) title="Change Password"%>
+<% if (username) { %>
+<% text = "Hello " + username; %>
+<% } else if (error) { %>
+<% text = error; %>
+<% } %>
+
+<body>
+    <h1>Hello! Welcome to CSRF Demo</h1>
+    <% if(!isLoggedIn) { %>
+    <form action="/task2/login" method="POST">
+        <div class="grid-container">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="grid-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="grid-container">
+            <label for="isSecure">Secure login</label>
+            <input class="checkbox" type="checkbox" name="isSecure" id="isSecure">
+        </div>
+        <div>
+            <button class="button" type="submit">Login</button>
+        </div>
+    </form>
+    <% } %>
+    <div id="message">
+        <p><%= text %></p>
+    </div>
+
+    <% if(isLoggedIn) { %>
+    <form action="/task2/change-password" method="POST">
+        <div class="grid-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="grid-container">
+            <label for="confirm_password">Confirm password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+        </div>
+        <% if(token) { %>
+        <div style="display: none;">
+            <label for="token">Token:</label>
+            <input type="text" id="token" name="token" value="<%=token%>" readonly>
+        </div>
+        <% } %>
+        <% if(error){ %>
+        <div><%=error%></div>
+        <% } %>
+        <div>
+            <button class="button" type="submit">Submit</button>
+        </div>
+    </form>
+    <form action="/task2/logout" method="POST" style="border: none;">
+        <button class="button" type="submit">Logout</button>
+    </form>
+    <a href="/lask2/coupon"><button class="button">Click for free coupon</button></a>
+    <% } %>
+
+    <a href="/"><button class="button">Home</button></a>
+
+
+
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web2Lab2</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+
+<body>
+    <h1>Hello! Welcome to WEB2 LAB2</h1>
+    <h3>This exercise demonstrates SQL Injection and CSRF vulnerablities</h3>
+    <div class="options">
+        <button class="button" id="1">SQL Injection</button>
+        <button class="button" id="2">CSRF</button>
+    </div>
+
+    <script>
+        document.getElementById('1').addEventListener('click', function () {
+            // Redirect to /task1
+            window.location.href = '/task1';
+        });
+        document.getElementById('2').addEventListener('click', function () {
+            // Redirect to /task1
+            window.location.href = '/task2';
+        });
+    </script>
+</body>
+
+</html>

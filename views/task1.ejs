@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web2Lab2</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+
+<% let text = ""; %>
+<% if (username) { %>
+<% text = "Hello " + username; %>
+<% } else if (error) { %>
+<% text = error; %>
+<% } %>
+
+<body>
+    <h1>Hello! Welcome to SQL Injection Demo</h1>
+    <form action="/task1/secure" method="POST">
+        <div class="grid-container">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="grid-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <button class="button" type="submit">Login</button>
+        </div>
+    </form>
+
+    <div id="message">
+        <p><%= text %></p>
+    </div>
+
+    <div id="security-mode">
+        <p>Security Mode: <span id="security-status">Secure</span></p>
+    </div>
+
+    <button class="button" id="security-toggle">Toggle Security</button>
+
+    <a href="/"><button class="button">Home</button></a>
+
+
+    <script>
+        const securityToggle = document.getElementById('security-toggle');
+        const securityStatus = document.getElementById('security-status');
+        const form = document.querySelector('form');
+        let isSecure = "<%= isSecure %>";
+        if (isSecure == "true") {
+            isSecure = true;
+        } else {
+            isSecure = false
+        }
+        updateSecurityStatus();
+
+        function updateSecurityStatus() {
+            if (isSecure) {
+                securityStatus.textContent = 'Secure';
+                form.action = "/task1/secure";
+            } else {
+                securityStatus.textContent = 'Unsecure';
+                form.action = "/task1/unsecure";
+            }
+        }
+        securityToggle.addEventListener('click', () => {
+            isSecure = !isSecure;
+            updateSecurityStatus();
+        });
+    </script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
