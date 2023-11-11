@@ -41,6 +41,8 @@ form {
     border-radius: 5px;
     background-color: rgba(28, 187, 142, 0.267);
     font-family: 'Poppins';
+    transition: all ease-in-out 0.3s;
+
 }
 
 .grid-container> :nth-child(2):focus {
@@ -50,6 +52,8 @@ form {
     border-radius: 5px;
     background-color: rgba(28, 187, 142, 0.464);
     font-family: 'Poppins';
+    transition: all ease-in-out 0.3s;
+
 }
 
 
@@ -59,11 +63,27 @@ form {
     border-radius: 5px;
     font-size: 1rem;
     margin: 5px;
+    transition: all ease-in-out 0.3s;
+
 }
 
 .button:hover {
     cursor: pointer;
     background-color: rgba(28, 187, 142, 0.464);
+    transition: all ease-in-out 0.3s;
+
+}
+
+.help {
+    background-color: rgb(191, 238, 225);
+    color: rgba(191, 238, 225);
+    transition: all ease-in-out 0.3s;
+}
+
+.help:hover {
+    background-color: white;
+    color: black;
+    transition: all ease-in-out 0.3s;
 }
 
 @media (max-width: 768px) {
@@ -128,7 +148,7 @@ form {
         font-family: 'Poppins';
     }
 
-    #security-mode{
+    #security-mode {
         display: flex;
         flex-direction: row;
         justify-content: space-around;

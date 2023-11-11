@@ -9,9 +9,32 @@
 <body class="main-container">
     <h1>Hello! Welcome to WEB2 LAB2</h1>
     <h3>This exercise demonstrates SQL Injection and CSRF vulnerablities</h3>
+    <p>Creator: Jakov Sikirić</p>
     <div class="options">
         <button class="button" id="1">SQL Injection</button>
         <button class="button" id="2">CSRF</button>
+    </div>
+    <form action="/reset-passwords" method="POST" style="border: none;">
+        <button class="button">Reset passwords</button>
+    </form>
+
+    <div class="users" style="width: 20%;">
+        <div class="user" style="display: flex; flex-direction: row; justify-content: space-around;">
+            <p>Michael:</p>
+            <p>bulls1991</p>
+        </div>
+        <div class="user" style="display: flex; flex-direction: row; justify-content: space-around;">
+            <p>Bob:</p>
+            <p>teardrop01</p>
+        </div>
+        <div class="user" style="display: flex; flex-direction: row; justify-content: space-around;">
+            <p>Alice:</p>
+            <p>sunshine02</p>
+        </div>
+        <div class="user" style="display: flex; flex-direction: row; justify-content: space-around;">
+            <p>Leo:<p>
+            <p>goat10</p>
+        </div>
     </div>
 
     <script>
